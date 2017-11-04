@@ -11,7 +11,7 @@ public class RageQuit
 
         string input = Console.ReadLine();
         StringBuilder result = new StringBuilder();
-        foreach (Match m in Regex.Matches(input, @"([^ 0 - 9] +)(\d+)"))
+        foreach (Match m in Regex.Matches(input, @"([^0-9]+)(\d+)"))
         {
             string word = m.Groups[1].Value.ToUpper();
             int count = int.Parse(m.Groups[2].Value);
