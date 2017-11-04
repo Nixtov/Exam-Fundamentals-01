@@ -4,21 +4,24 @@ using System.Linq;
 
 class CoffeeOrders
 {
-   public static void Main()
+    public static void Main()
     {
         int countN = int.Parse(Console.ReadLine());
         decimal totalPrice = 0;
         for (int i = 0; i < countN; i++)
         {
-           decimal price = ProgressOrder();
+            decimal price = ProgressOrder();
             totalPrice += price;
         }
         Console.WriteLine($"Total: ${totalPrice:F2}");
     }
 
-     static decimal ProgressOrder()
+    static decimal ProgressOrder()
     {
-        throw new NotImplementedException();
+        decimal price = double.Parse(Console.ReadLine());
+        decimal price = double.Parse(Console.ReadLine());
+        decimal price = double.Parse(Console.ReadLine());
+
     }
 }
 
