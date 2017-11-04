@@ -1,19 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 
 public class RageQuit
+{
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-        string pattern = @"([^0-9]+)(\d+)";
-        string input = @"aSd2&5s@1";
 
-        foreach (Match m in Regex.Matches(input, pattern))
+        string input = Console.ReadLine();
+        StringBuilder result = new StringBuilder();
+        foreach (Match m in Regex.Matches(input, @"([^ 0 - 9] +)(\d+)"))
         {
-            Console.WriteLine("'{0}' found at index {1}.", m.Value, m.Index);
+            string word = m.Groups[1].Value.ToUpper();
+            int count = int.Parse(m.Groups[2].Value);
+            for (int i = 0; i < count; i++)
+            {
+                result.Append(word);
+            }
+
         }
+        int uniqueChars = result.ToString().Distinct().Count();
+        Console.WriteLine($"Unique symbols used: {uniqueChars}");
+        Console.WriteLine(result.ToString());
     }
-    }
+}
 
